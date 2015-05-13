@@ -1,33 +1,24 @@
 $(function(){
 	// register a helper
-	Handlebars.registerHelper('capitalize', function(str){
+	Handlebars.registerHelper('caps', function(str){
 		// we pass string to the helper
-		str=str || '';
-		return str.slice(0,1).toUpperCase + str.slice(1);
+		str = str || '';
+		return str.slice(0,1).toUpperCase() + str.slice(1);
 	});
 
 	// grab template script form index page
-	var templateScript = $('helperTemplate').html();
+	var templateScript = $('#helperTemplate').html();
 
 	// compile template
 	var template = Handlebars.compile(templateScript);
 
 	// our context data
-
 var context ={
 	animals:[
-	{
-		name:"cow",
-		noise:"moooo"
-	},
-	{
-		name:"cat",
-		noise:"meow"
-	},
-	{
-		name:"fish",
-		noise:''
-	}
+	{ name:"cow",
+		noise:"moooo"},
+	{ name:"fish",
+		noise:''}
 	]
 };
 
@@ -35,7 +26,6 @@ var context ={
 var compiledHtml = template(context);
 
 // add data to html index page
-$('templateInfo').html(compiledHtml);
-
+$('.templateInfo').html(compiledHtml);
 
 });

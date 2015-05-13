@@ -1,27 +1,29 @@
 <!DOCTYPE html>
- <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
 
+</head>
+<body>
+	<script id = "helperTemplate" type="text/x-handlebars-template">
+	{{#each animals}}
+	<p>
 
-    </head>
-    <body>
-    	<script id = "helperTemplate" type="text/x-handlebars-template">
+		The {{caps this.name}} says
+		{{#if this.noise}}
+		"{{this.noise}}".
+		{{else}}
+		nothing since its a {{this.name}}.
+		{{/if}}
+	</p>
+	{{/each}}
+	</script>
+	<div class="templateInfo">
 
+	</div>
 
-    	</script>
-    	<div class="templateInfo">
+	<script src="handlebars-v3.0.3.js"></script>
+	<script src="jquery.js"></script>
+	<script src="main.js"></script>
 
-    	</div>
-
-    	<script src="handlebars-v3.0.3.js"></script>
-    	<script src="main.js"></script>
-    	<script src="jquery.js"></script>
-
-
-    </body>
+</body>
 </html>
