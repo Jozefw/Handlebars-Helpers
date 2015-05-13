@@ -28,4 +28,21 @@ var compiledHtml = template(context);
 // add data to html index page
 $('.templateInfo').html(compiledHtml);
 
+
+
+var blockScript = $('#blockTemplate').html();
+
+Handlebars.registerHelper('cheat', function(options){
+	// the options object has a special function (fn) which is a compiled version of the template
+	return options.fn(this).toUpperCase();
+});
+
+var ContextData = {
+	"code": "up and down with the joystick"
+};
+
+var compiledData = blockScript(ContextData);
+
+$(".block").html(compiledData);
+
 });
